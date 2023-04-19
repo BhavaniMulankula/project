@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="result">
+
+    </div>
+    <form>
+        <p>What is HTML?</p>
+        <input type="radio" name="q1"value="A">
+        <label for="">A.Hyper text markup language</label>
+         <input type="radio" name="q1" value="B">
+        <label for="">B.High transfer message language</label> 
+    <input type="radio" name="q1" value="C">
+<label for="">C.hyper transmitt msg logo</label> 
+<input type="radio" name="q1" value="D">
+<label for="">D.None of the above</label>
+
+<p>What is CSS?</p>
+        <input type="radio" name="p2"value="">
+        <label for="">A.Cascode style shape</label>
+         <input type="radio" name="p2" value="">
+                 <label for="">B.cascading style sheet</label> 
+    <input type="radio" name="p2" value="">
+<label for="">C.cascade styling sheet</label> 
+<input type="radio" name="p2" value="">
+<label for="">D.all of the above</label>
+
+<p>What is JAVA SCRIPT?</p>
+        <input type="radio" name="s3"value="A">
+        <label for="">A.It is a scripting language</label>
+         <input type="radio" name="s3" value="B">
+        <label for="">B.it is similar to html, css,bootstrap</label> 
+    <input type="radio" name="s3" value="C">
+<label for="">C.JS Iis integrated with HTML</label> 
+<input type="radio" name="s3" value="D">
+<label for="">D.Option A&C</label>
+
+<br><br><br><br>
+<input type="submit" value="submit">
+</form>
+<script>
+    var f1=document.querySelector("form")
+    var r1=document.querySelector(".result")
+    var key=['A','B','D'];
+    f1.addEventListener("submit",function(e)
+    {
+   var score=0
+e.preventDefault();
+r1.style.display="block";
+var userAnswers=[f1.q1.value,f1.p2.value,f1.s3.value];
+userAnswers.forEach(function(m1,index)
+{
+    console.log(m1===key[index])
+    if(m1===key[index]){
+        score=score+25;
+    }
+}
+)
+console.log(score);
+    r1.querySelector('span').textContent=`{Thanks for written exam}`;
+    })
+f1.reset();
+
+
+</script>
+</body>
+</html>
